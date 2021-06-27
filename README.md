@@ -1,4 +1,4 @@
-![Mater Foundation 100 Miles in a Month Banner](/100-web-banner.jpg)
+![Mater Foundation 100 Miles in a Month Banner](static/100-web-banner.jpg)
 
 This is the code for the Mater Foundation's bulk sms notification function to the 100 Miles in a Month challenge.
 
