@@ -1,6 +1,7 @@
 import os
 import json
-from sms_client import env
+import env
+from parse_csv import phones
 from twilio.rest import Client
 
 ACCOUNT_SID = os.getenv('TWILIO_ACCOUNT_SID')
@@ -9,9 +10,9 @@ NOTIFY_SERVICE_SID = os.getenv('TWILIO_NOTIFY_SERVICE_SID')
 
 client = Client(ACCOUNT_SID, AUTH_TOKEN)
 
-numbers = ["+353851686169", "+353858667065"]
+numbers = phones
 
-body = "Ahoy World!"
+body = ""
 
 def send_bulk_sms(numbers, body):
     bindings = list(map(lambda number: json.dumps({'binding_type': 'sms', 'address': number}), numbers))
@@ -22,4 +23,4 @@ def send_bulk_sms(numbers, body):
     )
     print(notification.body)
 
-send_bulk_sms(numbers, body)
+    send_bulk_sms(numbers, body)
